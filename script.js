@@ -79,11 +79,11 @@
 
   /* scheduling — two independent timers */
   function scheduleAmbient() {
-    const delay = 500 + Math.random() * 900;
+    const delay = 250 + Math.random() * 450;
     setTimeout(() => { spawnAmbient(); scheduleAmbient(); }, delay);
   }
   function scheduleEdge() {
-    const delay = 350 + Math.random() * 700;
+    const delay = 180 + Math.random() * 350;
     setTimeout(() => { spawnEdge(); scheduleEdge(); }, delay);
   }
   scheduleAmbient();
@@ -96,7 +96,7 @@
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = sparks.length - 1; i >= 0; i--) {
       const s = sparks[i];
-      s.life -= dt * 2.8;
+      s.life -= dt * 2.2;
       if (s.life <= 0) { sparks.splice(i, 1); continue; }
       ctx.save();
       ctx.globalAlpha = s.life * 0.45;
