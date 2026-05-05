@@ -89,6 +89,17 @@
   scheduleAmbient();
   scheduleEdge();
 
+  /* spacebar flurry */
+  window.addEventListener('keydown', e => {
+    if (e.code !== 'Space') return;
+    if (['INPUT', 'TEXTAREA', 'BUTTON', 'SELECT'].includes(document.activeElement.tagName)) return;
+    e.preventDefault();
+    const count = 30 + Math.floor(Math.random() * 15);
+    for (let i = 0; i < count; i++) {
+      Math.random() > 0.4 ? spawnEdge() : spawnAmbient();
+    }
+  });
+
   let last = 0;
   function loop(now) {
     const dt = Math.min((now - last) / 1000, 0.05);
