@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Nervous System &mdash; BI 103 Neural Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <h1>The Nervous System</h1>
+      <p class="subtitle">BI 103 &nbsp;&middot;&nbsp; Neural Laboratory</p>
+    </div>
+  </header>
+
+  <nav id="main-nav">
+    <a href="#neurons">Neuron Structure</a>
+    <a href="#neural-circuit">Neural Circuit</a>
+    <a href="#cerebral-cortex">Cerebral Cortex</a>
+    <a href="#brain-disorders">Brain Disorders</a>
+    <a href="#perception">Perception</a>
+    <a href="#illusions">Illusions</a>
+    <a href="#scent-memory">Scent &amp; Memory</a>
+  </nav>
+
+  <main>
+
+    <!-- 1. NEURON STRUCTURE -->
+    <section id="neurons">
+      <h2>Basic Neuron Structure</h2>
+      <div class="cell-player" data-src="audio/neuron_structure.wav" data-label="Neuron Structure"></div>
+      <p>
+        Neurons are the cells the nervous system uses to send information around the body. Each one has a few key parts: the <strong>cell body (soma)</strong> is where the nucleus lives and where the cell does its basic maintenance. Branching out from the soma are <strong>dendrites</strong>, which receive incoming signals from other neurons. On the other side is the <strong>axon</strong>, a long fiber that carries the signal away from the cell body toward the next neuron or target tissue.
+      </p>
+      <p>
+        Many axons are wrapped in a fatty coating called the <strong>myelin sheath</strong>, made up of Schwann cells. Myelin acts like insulation on a wire and speeds up signal transmission dramatically. Gaps between the myelin segments are called <strong>nodes of Ranvier</strong>, where the electrical signal jumps from node to node rather than traveling continuously along the full length of the axon.
+      </p>
+      <div class="image-row">
+        <figure>
+          <img src="images/01.jpeg" alt="Nervous system overview poster" loading="lazy" />
+          <figcaption>A classroom poster showing the overall structure of the nervous system, including neurons, the synapse, and the central vs. peripheral nervous system divisions.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/12.jpeg" alt="Nervous tissue histology diagram" loading="lazy" />
+          <figcaption>A nervous tissue reference diagram showing several types of nerve cells under magnification, including motor neurons, Purkinje cells, and peripheral nerve cross-sections. Below it, individual neurons pulled apart so each cell can be seen distinctly.</figcaption>
+        </figure>
+      </div>
+
+      <h3>How Neurons Connect</h3>
+      <p>
+        Neurons do not actually touch each other. They communicate across a tiny gap called a <strong>synapse</strong>. When an electrical signal (called an action potential) travels down the axon and reaches the axon terminal, it triggers the release of <strong>neurotransmitters</strong> stored in small bubbles called <strong>vesicles</strong>. These neurotransmitters float across the synaptic gap and bind to receptors on the next neuron, passing the signal along.
+      </p>
+      <div class="image-row">
+        <figure>
+          <img src="images/13.jpeg" alt="Myelinated nerve fibers under microscope" loading="lazy" />
+          <figcaption>Myelinated nerve fibers viewed under the microscope in lab. The long, parallel pink-red fibers are axons bundled together inside a peripheral nerve, surrounded by their myelin sheaths.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/14.jpeg" alt="Synapse model" loading="lazy" />
+          <figcaption>A physical synapse model. The wide bulb at the top is the axon terminal packed with vesicles (the small round beads) containing neurotransmitters. The narrower base represents the receiving dendrite of the next neuron.</figcaption>
+        </figure>
+      </div>
+
+      <h3>Factors That Can Impact Axons and Synapses</h3>
+      <ul class="factor-list">
+        <li><strong>Myelin damage:</strong> In diseases like multiple sclerosis (MS), the immune system attacks the myelin sheath. Without proper insulation, signals slow down, misfire, or fail to reach their destination entirely.</li>
+        <li><strong>Neurotransmitter imbalances:</strong> Too much or too little of a given neurotransmitter can have big effects. Low dopamine is tied to Parkinson's disease, and imbalances in serotonin and norepinephrine are linked to depression and anxiety.</li>
+        <li><strong>Drugs and toxins:</strong> Many substances work by mimicking, blocking, or flooding neurotransmitter systems at the synapse, hijacking normal signaling.</li>
+        <li><strong>Sleep and nutrition:</strong> The brain forms and maintains synaptic connections most actively during sleep. Poor nutrition (especially lack of omega-3 fatty acids and B vitamins) can slow the growth and repair of myelin.</li>
+      </ul>
+    </section>
+
+    <!-- 2. NEURAL CIRCUIT IN ACTION -->
+    <section id="neural-circuit">
+      <h2>Neural Circuit in Action</h2>
+      <div class="cell-player" data-src="audio/neural_circuit.wav" data-label="Neural Circuit"></div>
+      <p>
+        A <strong>neural circuit</strong> is a group of neurons that work together to process information and produce a response. One of the clearest examples is the <strong>reflex arc</strong>, which shows how the nervous system can respond to a stimulus without waiting for the brain to be involved.
+      </p>
+
+      <figure class="single-img wide-img">
+        <img src="images/15.png" alt="Hand reaching toward an open flame" loading="lazy" />
+        <figcaption>A hand reaching toward an open flame. This is exactly the scenario a withdrawal reflex is built to handle, and it happens faster than conscious thought.</figcaption>
+      </figure>
+
+      <h3>The Withdrawal Reflex</h3>
+      <p>
+        When a hand gets close to something dangerously hot, a reflex kicks in before conscious thought has a chance to process what is happening. Here is the sequence:
+      </p>
+      <ol class="reflex-steps">
+        <li><strong>Stimulus:</strong> Heat and pain receptors in the skin detect the danger.</li>
+        <li><strong>Sensory neuron:</strong> A signal travels up a sensory neuron toward the spinal cord.</li>
+        <li><strong>Integration:</strong> Inside the spinal cord, an interneuron receives the signal and immediately passes it along to the motor side.</li>
+        <li><strong>Motor neuron:</strong> A motor neuron carries the response signal back out to the arm and hand muscles.</li>
+        <li><strong>Response:</strong> The muscles contract and the hand pulls away from the flame.</li>
+      </ol>
+      <p>
+        All of this happens before the signal has even reached the brain to be consciously felt as pain. You pull back first, and then register that it hurt. The brain receives the information a moment later as a kind of after-the-fact report.
+      </p>
+
+      <h3>Reflex vs. Voluntary Response</h3>
+      <p>
+        A reflex is different from a voluntary action because it bypasses the brain's decision-making centers entirely. Voluntary movements originate in the motor cortex and travel down to the muscles. Reflexes are processed in the spinal cord, which makes them much faster but less flexible. There is no deliberating, just a hardwired response.
+      </p>
+    </section>
+
+    <!-- 3. CEREBRAL CORTEX LOBES -->
+    <section id="cerebral-cortex">
+      <h2>Lobes of the Cerebral Cortex</h2>
+      <div class="cell-player" data-src="audio/cerebral_cortex.wav" data-label="Cerebral Cortex"></div>
+      <p>
+        The <strong>cerebrum</strong> is the largest part of the brain and is divided into four main lobes. They do not work in complete isolation since most tasks involve multiple lobes talking to each other, but each has a primary specialty.
+      </p>
+
+      <figure class="single-img wide-img">
+        <img src="images/07.jpeg" alt="Brain anatomy poster with color-coded functional areas" loading="lazy" />
+        <figcaption>A detailed brain anatomy poster from the lab showing the color-coded functional areas of the cerebral cortex, including lateral and superior views.</figcaption>
+      </figure>
+
+      <div class="lobe-table-wrap">
+        <table class="lobe-table">
+          <thead>
+            <tr>
+              <th>Lobe</th>
+              <th>Location</th>
+              <th>Primary Roles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Frontal</strong></td>
+              <td>Front of the brain, behind the forehead</td>
+              <td>Voluntary movement, planning, decision-making, personality, and speech production (Broca's area)</td>
+            </tr>
+            <tr>
+              <td><strong>Parietal</strong></td>
+              <td>Top and back, behind the frontal lobe</td>
+              <td>Processing sensory input from the body (touch, pressure, pain, temperature), spatial awareness, and reading</td>
+            </tr>
+            <tr>
+              <td><strong>Temporal</strong></td>
+              <td>Sides of the brain, near the ears</td>
+              <td>Hearing, language comprehension (Wernicke's area), memory formation, and recognizing faces</td>
+            </tr>
+            <tr>
+              <td><strong>Occipital</strong></td>
+              <td>Back of the brain</td>
+              <td>Visual processing, interpreting the signals coming in from the eyes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4. BRAIN DISORDERS -->
+    <section id="brain-disorders">
+      <h2>Brain Disorders</h2>
+      <div class="cell-player" data-src="audio/brain_disorders.wav" data-label="Brain Disorders"></div>
+
+      <div class="disorder-pair">
+        <div class="disorder">
+          <figure>
+            <img src="images/05.jpeg" alt="Epilepsy education poster and color-coded brain model" loading="lazy" />
+            <figcaption>An epilepsy education poster and a color-coded brain model from the lab display.</figcaption>
+          </figure>
+          <h3>Epilepsy</h3>
+          <p>
+            <strong>What it is:</strong> Epilepsy is a neurological disorder where groups of neurons experience sudden, abnormal bursts of electrical activity. This disrupts normal brain function and can cause seizures.
+          </p>
+          <p>
+            <strong>Altered function:</strong> Seizures look very different depending on which part of the brain is affected. They can range from brief lapses in awareness (absence seizures) to full-body convulsions. After a seizure, the brain often enters a recovery period of confusion or fatigue.
+          </p>
+          <p>
+            <strong>Causes:</strong> Sometimes there is a structural cause like scarring or a tumor, other times no clear cause is found. Common triggers include flashing lights, stress, or sleep deprivation.
+          </p>
+        </div>
+
+        <div class="disorder">
+          <figure>
+            <img src="images/06.jpeg" alt="Parkinson's disease poster and brain in skull model" loading="lazy" />
+            <figcaption>A Parkinson's disease education poster alongside a brain-in-skull model. The poster shows the loss of dopamine-producing neurons and how that cascades into movement problems.</figcaption>
+          </figure>
+          <h3>Parkinson's Disease</h3>
+          <p>
+            <strong>What it is:</strong> Parkinson's is a progressive neurodegenerative disease caused by the gradual death of dopamine-producing neurons in a brain region called the <strong>substantia nigra</strong>.
+          </p>
+          <p>
+            <strong>Altered function:</strong> Dopamine is essential for smooth, coordinated movement. As levels drop, communication in the motor pathways breaks down. The classic symptoms are a resting tremor, muscle stiffness, and slowed movement. Balance and walking are also affected over time.
+          </p>
+          <p>
+            <strong>Treatment:</strong> There is no cure yet. The drug levodopa helps replenish dopamine levels and manage symptoms, but it does not stop the underlying cell death from progressing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PERCEPTION -->
+    <section id="perception">
+      <h2>Perception and Vision</h2>
+      <div class="cell-player" data-src="audio/perception.wav" data-label="Perception"></div>
+      <p>
+        <strong>Perception</strong> is how the brain interprets and makes sense of sensory information. It is not the same as sensation. Sensation is the raw signal coming in from a receptor. Perception is the brain's construction of what that signal means, shaped by past experience, context, and expectation.
+      </p>
+      <p>
+        Vision makes this easy to trace. Here is what actually happens when you look at something:
+      </p>
+
+      <figure class="single-img">
+        <img src="images/08.jpeg" alt="Physical eyeball model being opened" loading="lazy" />
+        <figcaption>A physical model of the human eye being opened to show its internal structure. The clear dome is the lens, and the pink inner lining is the retina where photoreceptor cells convert light into electrical signals.</figcaption>
+      </figure>
+
+      <ol class="reflex-steps">
+        <li><strong>Light enters the eye</strong> and passes through the cornea and lens, which focus it onto the back of the eye.</li>
+        <li><strong>The retina receives the image</strong>, projected upside down. Rod and cone photoreceptors convert light intensity and color into electrical signals.</li>
+        <li><strong>The optic nerve</strong> carries those signals to the brain. The two eyes' signals partially cross at the optic chiasm, so each hemisphere of the brain receives input from both eyes.</li>
+        <li><strong>The visual cortex</strong> (occipital lobe) processes the raw signals. The brain flips the image right-side up, fills in the blind spot, corrects for color constancy, and interprets edges, depth, and motion.</li>
+      </ol>
+
+      <p>
+        The key takeaway is that what you experience visually is not a direct recording of reality. It is the brain's best interpretation of the incoming data. That interpretation is why context, lighting, and expectations can genuinely change what you think you see.
+      </p>
+    </section>
+
+    <!-- 6. ILLUSIONS -->
+    <section id="illusions">
+      <h2>Illusions and Misperception</h2>
+      <p>
+        Illusions happen when the brain's interpretation of sensory input does not match physical reality. They are not exactly errors. They reveal the shortcuts and assumptions the brain makes to process information quickly. When those assumptions are deliberately manipulated, the result is a misperception.
+      </p>
+
+      <div class="image-row">
+        <figure>
+          <img src="images/02.jpeg" alt="Magic Eye book open to a tiger and pyramid scene" loading="lazy" />
+          <figcaption>The Magic Eye book open to what looks like an illustrated scene of a tiger and pyramids. Stare through the surface and the image shifts into 3D.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/03.jpeg" alt="Colorful repeating stereogram pattern" loading="lazy" />
+          <figcaption>A stereogram made of a dense, repeating color pattern. A hidden 3D shape is embedded in the pattern and only becomes visible when the eyes stop focusing at the page surface.</figcaption>
+        </figure>
+      </div>
+
+      <h3>How Stereograms Work</h3>
+      <p>
+        The book we looked at in lab was a <strong>Magic Eye autostereogram</strong>. These images exploit how the brain uses <strong>binocular disparity</strong> to perceive depth. Normally each eye sees a slightly different version of the same scene because they are a few inches apart. The brain compares the two views and uses the difference to calculate how far away things are.
+      </p>
+      <p>
+        A stereogram is designed so that when you relax your focus and let your eyes aim slightly behind the page, the repeating pattern looks different to each eye. The brain detects what seems like a real disparity and interprets it as depth, pulling a 3D image out of a flat surface. Nothing in the physical image is actually 3D at all.
+      </p>
+      <p>
+        It genuinely felt like you could step into the page. That is the brain fully committing to its depth interpretation. Once you stop trying to focus normally and let the visual system settle into the illusion, the effect becomes really convincing. It is a good reminder that what you experience visually is a brain construction, not a direct feed from the eyes.
+      </p>
+    </section>
+
+    <!-- 7. SCENT & MEMORY -->
+    <section id="scent-memory">
+      <h2>Scent and Memory</h2>
+      <div class="cell-player" data-src="audio/scent_memory.wav" data-label="Scent &amp; Memory"></div>
+      <p>
+        In lab we were given three unlabeled scent vials and asked to rate how pleasant each smelled and guess what the scent was. All three guesses turned out to be driven more by personal memory associations than by any direct identification of the smell itself.
+      </p>
+
+      <div class="scent-row">
+        <div class="scent-card">
+          <figure>
+            <img src="images/09.jpeg" alt="Scent vial labeled Z" loading="lazy" />
+            <figcaption>Tube Z</figcaption>
+          </figure>
+          <div class="scent-info">
+            <h3>Tube Z</h3>
+            <p class="scent-chip actual">Actual: Apple</p>
+            <p class="scent-chip guess">Guessed: Cherry</p>
+            <p>The smell was sweet and fruity, and cherry was the first thing that came to mind. Probably because the sweetness had a slight sharpness to it that I associate with cherry-flavored things. Not totally off since both are fruits, but the specific memory link pulled it toward cherry instead of apple.</p>
+          </div>
+        </div>
+
+        <div class="scent-card">
+          <figure>
+            <img src="images/10.jpeg" alt="Scent vial labeled Y" loading="lazy" />
+            <figcaption>Tube Y</figcaption>
+          </figure>
+          <div class="scent-info">
+            <h3>Tube Y</h3>
+            <p class="scent-chip actual">Actual: Mushroom</p>
+            <p class="scent-chip guess">Guessed: Flowers</p>
+            <p>This one was interesting. The smell made me think of my grandma, and because she liked flowers I went with flowers. But she also cooked a lot with mushrooms. The scent triggered a memory of her, and then I reached for what I consciously associated with her rather than what the smell itself was actually pointing to. The link was there, just routed through a different association.</p>
+          </div>
+        </div>
+
+        <div class="scent-card">
+          <figure>
+            <img src="images/11.jpeg" alt="Scent vial labeled X" loading="lazy" />
+            <figcaption>Tube X</figcaption>
+          </figure>
+          <div class="scent-info">
+            <h3>Tube X</h3>
+            <p class="scent-chip actual">Actual: Pineapple</p>
+            <p class="scent-chip guess">Guessed: Generic soda</p>
+            <p>This one smelled sweet and a little tropical, but nothing specific clicked. I landed on generic soda, probably because the sweetness reminded me of a fruit-flavored drink rather than a real fruit. Pineapple is a fair answer though since there is a similar quality in a lot of tropical sodas.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Why Smell and Memory Are So Closely Linked</h3>
+      <p>
+        Smell is the only sense that routes directly to the <strong>amygdala</strong> (emotion processing) and <strong>hippocampus</strong> (memory storage) without first passing through the thalamus. Every other sense gets filtered there first. That direct connection is why a smell can trigger a vivid memory or strong emotional response almost instantly, before you have even consciously identified what you are smelling.
+      </p>
+      <p>
+        All three guesses were driven by memory first and the smell second. After being told the correct answers and going back to smell them again, you can actually find the real scent in them. The label changes what the brain focuses on, which is itself a demonstration of how much perception is shaped by context and expectation.
+      </p>
+
+      <div class="hedonic-table-wrap">
+        <table class="hedonic-table">
+          <thead>
+            <tr>
+              <th>Tube</th>
+              <th>Actual Scent</th>
+              <th>My Guess</th>
+              <th>Memory Trigger</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Z</strong></td>
+              <td>Apple</td>
+              <td>Cherry</td>
+              <td>Sweet, slightly sharp fruitiness</td>
+              <td>Wrong, but same fruit category</td>
+            </tr>
+            <tr>
+              <td><strong>Y</strong></td>
+              <td>Mushroom</td>
+              <td>Flowers</td>
+              <td>Reminded me of my grandma</td>
+              <td>Wrong, but the memory link worked both ways</td>
+            </tr>
+            <tr>
+              <td><strong>X</strong></td>
+              <td>Pineapple</td>
+              <td>Generic soda</td>
+              <td>Artificial tropical sweetness</td>
+              <td>Wrong, but a real association</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>BI 103 Neural Laboratory &nbsp;&middot;&nbsp; Spring 2026</p>
+  </footer>
+
+  <div id="lightbox" aria-hidden="true">
+    <button id="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+    <p id="lightbox-caption"></p>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
