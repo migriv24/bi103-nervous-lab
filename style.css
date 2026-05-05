@@ -230,6 +230,14 @@ section h2 {
   padding-left: 0.85rem;
   margin-bottom: 1.25rem;
   letter-spacing: -0.01em;
+  animation: accent-zap 5s ease-in-out infinite;
+}
+
+@keyframes accent-zap {
+  0%, 100% { border-left-color: #c084fc; box-shadow: none; }
+  45%       { border-left-color: #e879f9; box-shadow: -3px 0 10px rgba(232,121,249,0.4); }
+  50%       { border-left-color: #818cf8; box-shadow: -3px 0 14px rgba(129,140,248,0.5); }
+  55%       { border-left-color: #e879f9; box-shadow: -3px 0 10px rgba(232,121,249,0.4); }
 }
 
 section h3 {
@@ -358,6 +366,12 @@ figure.wide-img img { max-height: 400px; }
     0 1px 3px rgba(80,0,160,0.06),
     inset 0 1px 0 rgba(255,255,255,0.95);
   transition: box-shadow 0.2s, transform 0.18s;
+  animation: card-static 8s ease-in-out infinite;
+}
+
+@keyframes card-static {
+  0%, 100% { border-color: rgba(255,255,255,0.88); }
+  50%       { border-color: rgba(192,132,252,0.45); }
 }
 
 .disorder:hover {
@@ -455,6 +469,7 @@ figure.wide-img img { max-height: 400px; }
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  animation: card-static 8s ease-in-out infinite;
 }
 
 .scent-card:hover {

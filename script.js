@@ -15,25 +15,79 @@
   resize();
   window.addEventListener('resize', resize);
 
-  function spawnSpark() {
+  const COLORS = ['#c084fc', '#818cf8', '#e879f9'];
+
+  /* ambient spark — random position, free zigzag */
+  function spawnAmbient() {
     const x = Math.random() * window.innerWidth;
     const y = Math.random() * window.innerHeight;
-    const segments = 3 + Math.floor(Math.random() * 3);
+    const segments = 3 + Math.floor(Math.random() * 4);
     const points   = [{ x, y }];
     for (let i = 0; i < segments; i++) {
-      const angle = (Math.random() - 0.5) * Math.PI * 1.6;
-      const len   = 7 + Math.random() * 16;
+      const angle = (Math.random() - 0.5) * Math.PI * 1.4;
+      const len   = 8 + Math.random() * 18;
       const last  = points[points.length - 1];
       points.push({ x: last.x + Math.cos(angle) * len, y: last.y + Math.sin(angle) * len });
     }
-    sparks.push({ points, life: 1.0, color: Math.random() > 0.5 ? '#c084fc' : '#818cf8' });
+    sparks.push({ points, life: 1.0, color: COLORS[Math.floor(Math.random() * COLORS.length)], width: 1.2 });
   }
 
-  function schedule() {
-    const delay = 900 + Math.random() * 1400;
-    setTimeout(() => { spawnSpark(); schedule(); }, delay);
+  /* edge spark — runs along the border of a visible UI element */
+  function spawnEdge() {
+    const candidates = [...document.querySelectorAll('section, .disorder, .scent-card, .lobe-table-wrap, .hedonic-table-wrap, .cell-player')];
+    const visible = candidates.filter(el => {
+      const r = el.getBoundingClientRect();
+      return r.top < window.innerHeight && r.bottom > 0 && r.width > 0;
+    });
+    if (!visible.length) return;
+    const el   = visible[Math.floor(Math.random() * visible.length)];
+    const rect = el.getBoundingClientRect();
+
+    /* pick an edge: 0=top 1=bottom 2=left 3=right */
+    const edge = Math.floor(Math.random() * 4);
+    let sx, sy, mainAxis, crossAxis;
+
+    if (edge === 0) {
+      sx = rect.left + Math.random() * rect.width;  sy = rect.top;
+      mainAxis = 'x'; crossAxis = 'y';
+    } else if (edge === 1) {
+      sx = rect.left + Math.random() * rect.width;  sy = rect.bottom;
+      mainAxis = 'x'; crossAxis = 'y';
+    } else if (edge === 2) {
+      sx = rect.left;  sy = rect.top + Math.random() * rect.height;
+      mainAxis = 'y'; crossAxis = 'x';
+    } else {
+      sx = rect.right; sy = rect.top + Math.random() * rect.height;
+      mainAxis = 'y'; crossAxis = 'x';
+    }
+
+    const dir      = Math.random() > 0.5 ? 1 : -1;
+    const stepMain = dir * (5 + Math.random() * 9);   // runs along edge
+    const segments = 5 + Math.floor(Math.random() * 5);
+    const points   = [{ x: sx, y: sy }];
+
+    for (let i = 0; i < segments; i++) {
+      const last    = points[points.length - 1];
+      const jitter  = (Math.random() - 0.5) * 5;      // perpendicular wobble
+      const nx = mainAxis === 'x' ? last.x + stepMain + (Math.random() - 0.5) * 3 : last.x + jitter;
+      const ny = mainAxis === 'y' ? last.y + stepMain + (Math.random() - 0.5) * 3 : last.y + jitter;
+      points.push({ x: nx, y: ny });
+    }
+
+    sparks.push({ points, life: 1.0, color: COLORS[Math.floor(Math.random() * COLORS.length)], width: 1.0 });
   }
-  schedule();
+
+  /* scheduling — two independent timers */
+  function scheduleAmbient() {
+    const delay = 500 + Math.random() * 900;
+    setTimeout(() => { spawnAmbient(); scheduleAmbient(); }, delay);
+  }
+  function scheduleEdge() {
+    const delay = 350 + Math.random() * 700;
+    setTimeout(() => { spawnEdge(); scheduleEdge(); }, delay);
+  }
+  scheduleAmbient();
+  scheduleEdge();
 
   let last = 0;
   function loop(now) {
@@ -45,13 +99,13 @@
       s.life -= dt * 2.8;
       if (s.life <= 0) { sparks.splice(i, 1); continue; }
       ctx.save();
-      ctx.globalAlpha = s.life * 0.38;
+      ctx.globalAlpha = s.life * 0.45;
       ctx.strokeStyle = s.color;
-      ctx.lineWidth   = 1.3;
-      ctx.shadowBlur  = 7;
+      ctx.lineWidth   = s.width;
+      ctx.shadowBlur  = 8;
       ctx.shadowColor = '#c084fc';
-      ctx.lineCap     = 'round';
-      ctx.lineJoin    = 'round';
+      ctx.lineCap     = 'butt';
+      ctx.lineJoin    = 'miter';
       ctx.beginPath();
       ctx.moveTo(s.points[0].x, s.points[0].y);
       for (let j = 1; j < s.points.length; j++) ctx.lineTo(s.points[j].x, s.points[j].y);
