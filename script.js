@@ -79,11 +79,11 @@
 
   /* scheduling — two independent timers */
   function scheduleAmbient() {
-    const delay = 250 + Math.random() * 450;
+    const delay = 140 + Math.random() * 260;
     setTimeout(() => { spawnAmbient(); scheduleAmbient(); }, delay);
   }
   function scheduleEdge() {
-    const delay = 180 + Math.random() * 350;
+    const delay = 100 + Math.random() * 200;
     setTimeout(() => { spawnEdge(); scheduleEdge(); }, delay);
   }
   scheduleAmbient();
