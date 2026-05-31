@@ -321,5 +321,28 @@
     <p id="lightbox-caption"></p>
   </div>
 
+  <script>
+  window.CLICK_CONFIG = {
+    idleSprite: 'Neutral_LookingTopRight_NoAction',
+    dialogues: [
+      {
+        trigger: 'enter',
+        sprite: 'Neutral_LookingTopRight_Pointing',
+        text: 'Neurons are basically the cells that make your brain a brain. Each one fires a signal, the next one picks it up, and that chain is how everything in here works.'
+      },
+      {
+        trigger: 'scroll:0.35',
+        sprite: 'Neutral_LookingAtUser_Pointing',
+        text: 'Four lobes, four different specialties. They all cooperate most of the time, but the way the work gets divided up is actually pretty elegant.'
+      },
+      {
+        trigger: 'scroll:0.65',
+        sprite: 'Cool_LookingRight_Gesture',
+        text: 'Illusions are not tricks. They are cases where your brain made its best guess with the information it had, and the guess happened to be wrong.'
+      }
+    ]
+  };
+  </script>
+  <script src="https://migriv24.github.io/bi103-final-portfolio/click-overlay.js"></script>
 </body>
 </html>
